@@ -16,6 +16,10 @@ on:
         description: '目标源 (Registry)'
         required: true
         default: 'registry.cn-hangzhou.aliyuncs.com'
+      namespace: 
+        description: '命名空间 (Namespace)'
+        required: true
+        default: 'pub-mzen'
       destination-image:
         description: '目标镜像 (Image)'
         required: true
@@ -29,6 +33,7 @@ env:
   SOURCE-IMAGE: ${{ inputs.source-image }}
   DESTINATION: ${{ inputs.destination }}
   DESTINATION-IMAGE: ${{ inputs.destination-image }}
+  NAMESPACE: ${{ inputs.namespace }}
 
 
 jobs:
