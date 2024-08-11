@@ -1,9 +1,9 @@
 # docker-image-syncer
 
 ## 简介
-auth.json 认证信息配置文件
-image.json 单镜像同步规则配置文件
-images.json 多镜像同步规则配置文件
+1. auth.json 认证信息配置文件
+2. image.json 单镜像同步规则配置文件
+3. images.json 多镜像同步规则配置文件
 
 ## 使用
 ### 设置用户名、密码、命名空间
