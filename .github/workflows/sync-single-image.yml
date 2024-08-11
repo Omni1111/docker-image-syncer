@@ -8,7 +8,7 @@ on:
         description: '镜像源 (Registry)'     
         required: true
         default: 'docker.io'
-      source-image: 
+      sourceimage:
         description: '源镜像 (Image)'     
         required: true
         default: ''
@@ -20,7 +20,7 @@ on:
         description: '命名空间 (Namespace)'
         required: true
         default: 'pub-mzen'
-      destination-image:
+      destinationimage:
         description: '目标镜像 (Image)'
         required: true
         default: ''
@@ -30,9 +30,9 @@ env:
   ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
   ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
   SOURCE: ${{ inputs.source }}
-  SOURCE-IMAGE: ${{ inputs.source-image }}
+  SOURCEIMAGE: ${{ inputs.sourceimage }}
   DESTINATION: ${{ inputs.destination }}
-  DESTINATION-IMAGE: ${{ inputs.destination-image }}
+  DESTINATIONIMAGE: ${{ inputs.destinationimage }}
   NAMESPACE: ${{ inputs.namespace }}
 
 
