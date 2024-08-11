@@ -19,7 +19,7 @@ on:
       namespace: 
         description: '命名空间 (Namespace)'
         required: true
-        default: 'pub-mzen'
+        default: '${{ secrets.NAMESPACE }}'
       destinationimage:
         description: '目标镜像 (Image)'
         required: true
