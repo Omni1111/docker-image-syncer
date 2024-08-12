@@ -8,6 +8,7 @@ on:
 env:
   ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
   ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+  NAMESPACE: ${{ secrets.NAMESPACE }}
 
 jobs:
   sync-multiple-image:
@@ -25,7 +26,9 @@ jobs:
           tar -xvf image-syncer-"${target_tag}"-linux-amd64.tar.gz
 
       - name: add sercret to file
-        run: envsubst < auth.json > multiple-auth.json
+        run: |
+          envsubst < auth.json > multiple-auth.json
+          envsubst < images.json > multiple-images.json
           
       - name: sync image
-        run: ./image-syncer --proc=6 --auth=./multiple-auth.json --images=./images.json --retries=3
+        run: ./image-syncer --proc=6 --auth=./multiple-auth.json --images=./multiple-images.json --retries=3
