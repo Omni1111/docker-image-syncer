@@ -53,4 +53,4 @@ jobs:
           envsubst < image.json > single-image.json
 
       - name: sync image
-        run: ./image-syncer --proc=6 --auth=./single-auth.json --images=./single-image.json --retries=3
+        run: ./image-syncer --proc=6 --auth=./single-auth.json --images=./single-image.json --retries=3 --force
