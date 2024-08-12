@@ -20,7 +20,7 @@ Setting -> Secrets and Variables -> Action
 ## Workflow
 ### 单镜像同步
 
-Sync Single Image 填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库，其他可以默认或修改。
+Sync Single Image，填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库，其他可以默认或修改。
 
 单镜像会同步已存在的镜像
 
