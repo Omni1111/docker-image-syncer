@@ -7,6 +7,34 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
+    inputs:
+        source:
+          description: '镜像源 (Registry)'     
+          required: true
+          default: 'docker.io'
+        sourceimage:
+          description: '源镜像 (Image)'     
+          required: true
+          default: ''
+        destination:
+          description: '目标源 (Registry)'
+          required: true
+          default: 'registry.cn-hangzhou.aliyuncs.com'
+        destinationimage:
+          description: '目标镜像 (Image)'
+          required: true
+          default: ''
+
+
+env:
+  ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+  ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+  SOURCE: ${{ inputs.source }}
+  SOURCEIMAGE: ${{ inputs.sourceimage }}
+  DESTINATION: ${{ inputs.destination }}
+  DESTINATIONIMAGE: ${{ inputs.destinationimage }}
+  NAMESPACE: ${{ secrets.NAMESPACE }}
+  
 
 jobs:
   build:
@@ -33,7 +61,7 @@ jobs:
         run: sudo service docker restart
 
       - name: Run a one-line script
-        run: docker pull nginx:latest
+        run: docker pull $SOURCE/nginx:latest
 
       - name: Run a one-line script
         run: docker images
