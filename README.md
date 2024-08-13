@@ -20,13 +20,13 @@ Setting -> Secrets and Variables -> Action
 ## Workflow
 ### 将镜像推送到Registry
 
-Docker Image Pusher，填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库。
+Docker Image Pusher，填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库(容器镜像服务 ACR)。
 
 ### 单镜像同步
 
 使用（image-syncer）https://github.com/AliyunContainerService/image-syncer
 
-Sync Single Image，填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库，其他可以默认或修改。
+Sync Single Image，填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库(容器镜像服务 ACR)，其他可以默认或修改。
 
 单镜像会同步已存在的镜像
 
