@@ -61,8 +61,13 @@ jobs:
         run: sudo service docker restart
 
       - name: Run a one-line script
-        run: docker pull $SOURCE/nginx:latest
+        run: docker pull $SOURCE/$SOURCEIMAGE
 
       - name: Run a one-line script
         run: docker images
+
+      - name: Run a one-line script
+        run: docker images --filter="reference=${{SOURCEIMAGE}}" --format "{{.ID}}"
+
+        
     
