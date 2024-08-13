@@ -67,7 +67,7 @@ jobs:
         run: docker images
         
       - name: Show Images
-        run: echo $ACR_PASSWORD | docker login -username=$ACR_USERNAME --password-stdin $DESTINATION
+        run: echo "${ACR_PASSWORD}" | docker login --username=$ACR_USERNAME --password-stdin $DESTINATION
         
       - name: Find Image ID
         run: docker images --filter="reference=${SOURCEIMAGE}" --format "{{.ID}}"
