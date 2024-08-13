@@ -2,10 +2,6 @@
 name: Docker Image Pusher
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
     inputs:
         source:
