@@ -66,11 +66,15 @@ jobs:
       - name: Show Images
         run: docker images
         
-      - name: Show Images
+      - name: Docker Login
         run: echo "${ACR_PASSWORD}" | docker login --username=$ACR_USERNAME --password-stdin $DESTINATION
         
       - name: Find Image ID
-        run: docker images --filter="reference=${SOURCEIMAGE}" --format "{{.ID}}"
+        run: |
+          image_id=docker images --filter="reference=${SOURCEIMAGE}" --format "{{.ID}}"
+          docker tag $image_id $DESTINATION/$NAMESPACE/$DESTINATIONIMAGE
+          docker push $DESTINATION/$NAMESPACE/$DESTINATIONIMAGE
+          docker images
 
         
     
