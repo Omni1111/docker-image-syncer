@@ -71,10 +71,12 @@ jobs:
         
       - name: Find Image ID
         run: |
-          image_id=docker images --filter="reference=${SOURCEIMAGE}" --format "{{.ID}}"
+          image_id=$(docker images --filter="reference=${SOURCEIMAGE}" --format "{{.ID}}")
+          echo "${image_id}"
           docker tag $image_id $DESTINATION/$NAMESPACE/$DESTINATIONIMAGE
-          docker push $DESTINATION/$NAMESPACE/$DESTINATIONIMAGE
-          docker images
+          
+      - name: Show Images
+        run: docker images
 
         
     
