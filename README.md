@@ -25,6 +25,11 @@ Setting -> Secrets and Variables -> Action
 
 Docker Image Pusher，填写源镜像，如：nginx:latest，目标镜像，如：（nginx:latest）或者自定义，需要提前添加仓库(容器镜像服务 ACR)。
 
+```
+docker pull gitea/gitea:1.22.1
+源镜像则是 gitea/gitea:1.22.1
+```
+
 ### 单镜像同步
 
 使用（image-syncer）https://github.com/AliyunContainerService/image-syncer
